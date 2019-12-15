@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Name: {{ publisher.name }}</h1>
+
+    <h4>Games for this Publisher:</h4>
+    {% for g in game_list %}
+        <p><strong>Name: </strong>{{ g.name }}</p>
+        <p><strong>Release Date: </strong>{{ g.release_date }}</p>
+    {% endfor %}
+
+
+
+{% endblock %}

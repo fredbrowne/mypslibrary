@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="game-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+          <div class="side1">
+              <h1>My Games List</h1>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row p-3">
+    {% if game_list %}
+      {% for game in game_list %}
+      <div class="col-md-4 game-card top-spacing">
+        <a href="{{ game.get_absolute_url }}"><img src="{{ game.box_art.url }}" alt="{{ game.name }}"></a>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p>You have not added any of your games yet.</p>
+    {% endif %}       
+  </div>
+</div>
+{% endblock %}
+

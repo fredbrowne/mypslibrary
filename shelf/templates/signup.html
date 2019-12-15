@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="login">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 login-form">
+            <h2 class="text-center">Sign Up for an Account</h2>
+            <form method="post" class="text-center">
+              {% csrf_token %}
+              {% for field in form %}
+            </br>
+                {{ field.label_tag }}</br>
+                {{ field }}</br>
+                {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+              <p><br /><button  class="btn login-button" type="submit">Sign up</button></p>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+
+

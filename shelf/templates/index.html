@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <div class="section-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+            <div class="side1">
+                <h1>My PlayStation Game Library</h1>
+                <h4>
+                  <p>Welcome to My PlayStation Game Library, a place for you to keep track and hold all your great games!</p>
+                </h4>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="side2">
+            <div class="side2-box">
+                {% if user.is_authenticated %}
+                      <ol><h4><strong>My Games Added:</strong> {{ num_games }}</h4></ol>
+                      <ol><h5>Last game added: <a href="{{ last_game.get_absolute_url }}">{{ last_game.name }}</a></h5></ol>
+                  {% else %}
+                  <h4 class="side2-h4"><a href="{% url 'login' %}">Login now</a> or<p><a href="{% url 'signup' %}">create an account</a>!</p></h4>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-2">
+    <div class="container">
+        <div class="row text-center mx-auto">
+          <div class="col-md-4 p-3">
+            <h4>Create an Account</h4>
+            <span class="icon-section2"><a href="{% url 'signup' %}"><i class="fas fa-user-circle"></i></a></span>
+          </div>
+          <div class="col-md-4 p-3">
+            <h4>Add your Games</h4>
+            <span class="icon-section2"><a href="{% url 'game_new' %}"><i class="fab fa-playstation"></a></i></span>
+          </div>
+          <div class="col-md-4 p-3">
+            <h4>Keep track of your games</h4>
+            <span class="icon-section2"><a href="{% url 'games' %}"><i class="fas fa-tasks"></a></i></span>
+          </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+

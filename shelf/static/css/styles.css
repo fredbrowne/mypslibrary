@@ -1,0 +1,209 @@
+/* Fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lilita+One|Titillium+Web&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+li {
+    list-style-type: none;
+}
+.sub-nav {
+    background: #003791;
+    background-size: auto;    
+}
+
+.sub-nav a {
+    color: rgb(214, 214, 214);
+}
+.sub-nav a:hover {
+    color: white;
+}
+img.ps-brand {
+    width: 100px;
+    height: auto;
+}
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    max-width:335px;
+    height:auto;
+}
+
+
+.sony-bar {
+    background-color: black;
+    height: 36px;
+    width: 100%;
+
+}
+.sony-bar a {
+    color:white;
+}
+
+.sony-logo {
+    margin-top: 11px;
+    margin-right: 9px;
+    width: 5.41%;
+    float: right;
+}
+.section-1 {
+    width: 100%;
+    height: 400px;
+    background-image: url(/media/ps_bg.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 1px black;
+}
+
+.side1 {
+    color: white;
+    font-family: 'Lilita One', cursive;
+}
+.side1 h4 {
+    font-family: 'Titillium Web', sans-serif;
+}
+.side2 {
+    margin-left: 50%;
+    margin-top: 5%;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+}
+.side2-h4 a {
+    text-decoration: none;
+    color: white;
+}
+.side2-h4 a:hover {
+    color: rgb(126, 175, 248);
+}
+.side2-box ol a {
+    text-decoration: none;
+    color: white;
+}
+.side2-box ol a:hover {
+    color: rgb(126, 175, 248);
+}
+.section-2 {
+    font-family: 'Titillium Web', sans-serif;
+}
+.ps-logo {
+    color: white;
+}
+.icon-section2 {
+    font-size: 120px;
+}
+.section-2 i {
+    color: rgb(126, 175, 248);
+}
+.section-2 i:hover {
+    color: #003791;
+}
+.footer {
+    height: 200px;
+    background: #003791;
+    background-size: auto;  
+}
+hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; 
+}
+.footer-nav {
+    color: rgb(126, 175, 248);
+}
+.footer-nav a {
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-nav a:hover {
+    color: white;
+}
+.footer-bottom {
+    color: #ccc;
+}
+.game-list {
+    width: 100%;
+    height: 200px;
+    background-image: url(/media/uncharted_lost_bg.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 1px black;
+}
+.top-spacing {
+    margin-top: 90px;
+}
+.min-space {
+    margin-top: 35px;
+    margin-bottom: 70px;
+}
+.login  {
+    background-image: url(/media/25yop_wallpaper.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+.login-form { 
+    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+    background: rgba(204, 204, 204, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+}
+
+.login-form form {
+    margin-left: 10px;
+    
+}
+.login-form form input {
+    padding-left: 10px;
+    margin-left: 10px;
+    width: 70%;
+    border-radius: 10px;
+    border: 2px solid rgb(126, 175, 248);
+    font-family: 'Titillium Web', sans-serif;
+}
+.game_edit {
+    font-family: 'Titillium Web', sans-serif;
+    padding-top: 30px;
+    background-image: url(/media/edit_game_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+}
+.game_edit form input {
+    adding-left: 10px;
+    margin-left: 10px;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid rgb(126, 175, 248);
+    font-family: 'Titillium Web', sans-serif;
+}
+.game-detail {
+    font-family: 'Titillium Web', sans-serif;
+    padding-top: 30px;
+    background-image: url(/media/edit_game_bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain, cover;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

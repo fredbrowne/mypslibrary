@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block title %}<title>My PlayStation Game Library</title>{% endblock %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Add additional CSS in static file -->
+        {% load static %}
+        <script src="https://kit.fontawesome.com/851bfc754a.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <script src="{% static 'js/custom.js' %}"></script>
+    </head>
+    <body>
+        <div class="sony-bar">
+            <a href="https://www.sony.com/"><img src="/media/sony_logo.png" class="sony-logo"></a>
+        </div>
+        <div class="sub-nav">
+            <ul class="nav justify-content-center">
+                <li class="nav-link ps-logo">
+
+                    <a href="{% url 'index' %}"><i class="fab fa-playstation"></i></a>
+
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'game_new' %}" class="nav-link">Add Game</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'games' %}">My Games</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'logout' %}" class="nav-link active">Logout</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="nav-link active">Login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'signup' %}" class="nav-link active">Sign Up</a>
+                    </li>
+                {% endif %}
+            </ul>   
+        </div>
+        <div>
+            <div>{% block content %}{% endblock %}
+                {% block pagination %}
+                    {% if is_paginated %}
+                        <div class="pagination">
+                            <span class="page-links">
+                                {% if page_obj.has_previous %}
+                                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                                {% endif %}
+                                <span class="page-current">
+                                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                {% if page_obj.has_next %}
+                                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    {% endif %}
+                {% endblock %} 
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="col-md-12 p-3 footer-nav">
+                    <a href="{% url 'index' %}">Home</a> | 
+                    <a href="{% url 'games' %}">My Games</a> | 
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a href="{% url 'login' %}">Login</a> | 
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                    {% endif %}
+                <hr />
+                </div>
+                <div class="container-fluid">
+                    <div class="col-md-12 p-3 footer-bottom text-center">
+                        This website was created for gamers, from a gamer. Keep playing. 2019 - Fred Browne
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

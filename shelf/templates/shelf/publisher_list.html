@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Publisher List</h1>
+  {% if publisher_list %}
+  <ul>
+    {% for p in publisher_list %}
+      <li>
+        <a href="{% url 'publisher_detail' p.id %}">{{ p.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no publishers yet.</p>
+  {% endif %}
+{% endblock %}

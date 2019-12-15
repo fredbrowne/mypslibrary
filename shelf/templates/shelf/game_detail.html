@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="game-detail">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>{{ game.name }}</h1>
+        </div>
+        <div class="col-md-8">
+          <p><strong>Platform: </strong>{{ game.platform }}</p>
+          <p><strong>Genre: </strong>{{ game.genre }}</p> 
+          <p><strong>Release date: </strong>{{ game.release_date}}</p>
+          <p><strong>Number of Players: </strong>{{ game.num_of_players }}</p>  
+          <p><strong>Publisher: </strong>{{ game.publisher }}</p>
+          <a href="{% url 'game_edit' pk=game.pk %}"><i class="fas fa-edit"></i> Edit game information</a>
+        </div>
+        <div class="col-md-4"> 
+          <img src="{{ game.box_art.url }}" alt="{{ game.name }}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
