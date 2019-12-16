@@ -1,0 +1,16 @@
+{
+    "name": "My PlayStation Game Library",
+    "description": "A barebones Python app, which can easily be deployed to Heroku.",
+    "image": "heroku/python",
+    "repository": "https://github.com/fredbrowne/mypslibrary",
+    "keywords": ["python", "django" ],
+    },
+    "environments": {
+      "test": {
+        "scripts": {
+          "test-setup": "python manage.py collectstatic --noinput",
+          "test": "python manage.py test"
+        }
+      }
+    }
+  }
